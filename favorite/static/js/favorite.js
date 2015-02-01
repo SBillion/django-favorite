@@ -26,9 +26,9 @@ $('.btn.favorite').click(function() {
     var target_id = $obj.attr('id').split('_')[1];
     $obj.prop('disabled', true);
     $.ajax({
-	url: $obj.attr('href'),
+	url: $obj.attr('data-href'),
 	type: 'POST',
-	data: {target_model: $obj.attr('model'),
+	data: {target_model: $obj.attr('data-model'),
 	       target_object_id: target_id},
 	success: function(response) {
 	    if (response.status == 'added') {
